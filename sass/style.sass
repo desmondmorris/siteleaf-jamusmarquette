@@ -1,0 +1,135 @@
+@import 'reset'
+
+*, body
+  font-family: Verdana
+  font-size: 10px
+
+a
+  color: #000000
+  text-decoration: none
+
+.lnk
+  cursor: pointer
+
+p
+  line-height: 20px
+  margin-bottom: 10px
+
+a:hover, li.hover a
+  color: #eeeeee
+  text-decoration: none
+
+div
+  &#container
+    margin: 80px auto 80px auto
+    width: 718px
+  &#header
+    font-size: 10px
+    height: 19px
+    line-height: 19px
+    padding: 0px 10px
+    text-transform: uppercase
+    span
+      &.site_title
+        display: inline
+        float: left
+      &.site_sub_title
+        display: inline
+        float: right
+
+a
+  &.toggler
+    cursor: pointer
+    display: block
+    font-size: 10px
+    font-weight: normal
+    height: 19px
+    line-height: 19px
+    margin-bottom: 1px
+    padding: 0px 10px
+    text-transform: uppercase
+  &.project_toggler
+    cursor: pointer
+    display: block
+    font-size: 10px
+    font-weight: normal
+    height: 19px
+    line-height: 19px
+    margin-bottom: 1px
+    padding: 0px 10px
+    text-transform: uppercase
+    background-color: #eeeeee
+    color: #000000
+  &.thoughts_on_design
+    background-color: #000000
+    color: #ffffff
+  &.projects
+    background-color: #333333
+    color: #cbcbcb
+  &.resume
+    background-color: #666666
+    color: #989898
+  &.contact
+    background-color: #999999
+    color: #676767
+  &.links
+    background-color: #cccccc
+    color: #313031
+
+div
+  &.element
+    display: none
+  &.element, &.project_element
+    margin: 0px auto
+    padding: 10px 0px
+    width: 698px
+  &.projects
+    margin: 0px
+    padding: 1px 0px
+    width: 718px
+  &.element div.paras
+    margin-bottom: -10px
+  &.project_image
+    margin-bottom: 10px
+    text-align: center
+  &.project_image_loading
+    background: url('../img/loading.gif')
+    float: right
+    height: 16px
+    width: 16px
+  &.project_image_paging
+    float: right
+    text-align: right
+    width: 168px
+    ul
+      display: inline
+      margin-right: 4px
+      li
+        display: inline
+        margin-left: 4px
+  &.project_description
+    line-height: 15px
+    float: left
+    width: 496px
+
+ul.links
+  margin-right: -10px
+  margin-top: -20px
+  li.links_category
+    display: inline
+    float: left
+    line-height: 15px
+    margin-top: 20px
+    text-transform: uppercase
+    width: 168px
+    ul.links_links li
+      margin-bottom: 0px
+      text-transform: none
+  ul.links_links
+    margin-top: 10px
+
+.tip
+  background-color: #3f3f3f
+  color: #fff
+  padding: 10px
+  width: 250px

@@ -1,0 +1,86 @@
+{% capture body %}
+
+<div id="sections">
+  <a class="toggler thoughts_on_design">Thoughts on design</a>
+
+  <div class="element">
+    <div class="paras">
+      <p>{{site.meta['thoughts_on_design']}}</p>
+    </div>
+  </div>
+
+  <a class="toggler projects">Projects</a>
+  <div class="element projects">
+    <div id="Projects">
+      {% for post in site.posts reversed %}
+      {% if post.parent.slug == 'projects' %}
+      {% assign projectIndex = forloop.index0 %}
+      <a class="project_toggler">{{ post.title }}</a>
+
+      <div class="project_element" id="Project{{ projectIndex }}">
+
+        {% if post.assets.size > 0 %}
+        <div class="project_image" id="ProjectImagePane{{ projectIndex }}">
+          <img alt="{{ post.title }}" class="largeImg" rel="{{ projectIndex }}" src="{{ post.assets.first.url }}" />
+        </div>
+
+        {% elsif post.meta.vimeo %}
+        <div class="project_image" id="ProjectImagePane{{ projectIndex }}">
+          <iframe src="{{ post.meta.vimeo }}?badge=0&byline=0&title=0&portrait=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        <div class="clearfix">
+          <div class="project_description">
+            <p>{{ post.body }}</p>
+          </div>
+
+          {% if post.assets.size > 0 %}
+          <div class="project_image_paging">
+            <a class="paging_prev" style="cursor: pointer;">&lt;</a>
+            <ul class="paging_list">
+              {% for asset in post.assets %}
+              <li class="paging_list_item_{{ forloop.index}}"><a href="{{ asset.url }}" rel="Project{{ projectIndex }}" title="{{ post.title }}">{{ forloop.index}}</a></li>
+              {% endfor %}
+            </ul>
+            <a class="paging_next" style="cursor: pointer;">&gt;</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <a class="toggler resume">Resume</a>
+  <div class="element">
+    <div class="paras">
+      <p>Please <a href="mailto:{{site.meta['contact_email']}}">contact me</a> for my
+      resume. Thank you.</p>
+    </div>
+  </div>
+
+  <a class="toggler contact">Contact</a>
+  <div class="element">
+    <p><a href=
+    "mailto:{{site.meta['contact_email']}}">{{site.meta['contact_email']}}</a></p>
+  </div>
+
+  <a class="toggler links">Links</a>
+  <div class="element">
+    <ul class="links">
+      <li class="links_category">Friends
+        <ul class="links_links">
+          <li><a href="http://www.japanesedude.com">Takashi Kusui</a></li>
+          <li><a href="http://www.isabellerancier.com/">Isabelle Rancier</a></li>
+          <li><a href="http://www.bengerman.com">Benjamin Thompson</a></li>
+          <li><a href="http://shawnhasto.com/">Shawn Hasto</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endcapture %}
+{% include 'layouts/default' %}
+
