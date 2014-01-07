@@ -2,7 +2,7 @@ jamusmarquette.com
 
 ====================
 
-Siteleaf version of jamusmarquette
+Siteleaf version of jamusmarquette.com
 
 ##Installation
    bundle install
