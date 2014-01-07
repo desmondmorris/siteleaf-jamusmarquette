@@ -8,7 +8,7 @@ Siteleaf version of jamusmarquette
    bundle install
 
 ##then 
-   rake build --trace
+   rake build
    
 ##If coffeescript not installed 
 
