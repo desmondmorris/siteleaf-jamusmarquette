@@ -1,8 +1,6 @@
 Rakefile
 *.sass
-*.coffee
 .sass-cache
 sass
-coffee
 Gemfile.lock
 Gemfile

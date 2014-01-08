@@ -6,7 +6,6 @@ This original site was built in 2008 in CakePHP.  I decided to convert to SiteLe
 
 ## Requirements
 * [SiteLeaf gem](https://github.com/siteleaf/siteleaf-gem)
-* CoffeeScript
 
 ## Installation
 Fork this repo and clone in to your local machine.  Then run `bundle install`.

@@ -1,21 +1,21 @@
 require 'sass'
 require 'uglifier'
 
+JS_PATH = './js'
+SASS_PATH = './sass'
 BUILD_PATH = './assets'
 
 desc 'Build coffee script and sass'
 task :build do
-  # Compile coffeescript
-  `coffee -b --output #{BUILD_PATH} --compile ./coffee`
 
-  min = Uglifier.new.compile(File.read("#{BUILD_PATH}/script.js"))
+  Dir.mkdir(BUILD_PATH) unless File.exists?(BUILD_PATH)
 
-  File.open("#{BUILD_PATH}/app.js", 'w') { |f| f.write(min) }
+  min = Uglifier.new.compile(File.read("#{JS_PATH}/script.js"))
 
-  File.delete(BUILD_PATH + '/script.js')
+  File.open("#{BUILD_PATH}/app.js", 'w+') { |f| f.write(min) }
 
   # Compile sass files
-  `sass -t compressed sass/style.sass #{BUILD_PATH}/app.css`
+  `sass -t compressed #{SASS_PATH}/style.sass #{BUILD_PATH}/app.css`
 end
 
 desc 'Remove all files in the build directory'
