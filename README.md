@@ -11,8 +11,9 @@ This original site was built in 2008 in CakePHP.  I decided to convert to SiteLe
 Fork this repo and clone in to your local machine.  Then run `bundle install`.
 
 ## Usage
-* **Build Assets** - `rake build`
+* **Build Assets** - `rake jm:build`
 * **Start Server** - `siteleaf server`
+* **Deploy theme** - `rake jm:deploy`
 
 ## Contributors
 * Desmond Morris ([desmondmorris](http://github.com/desmondmorris))

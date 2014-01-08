@@ -2,5 +2,7 @@ Rakefile
 *.sass
 .sass-cache
 sass
+js/script.js
+README.md
 Gemfile.lock
 Gemfile
